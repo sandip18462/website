@@ -31,7 +31,6 @@
         <a href="#contact">Contact</a>
     </nav>
     <div class="container" id="home">
-        <!-- Photo positioned within the container -->
         <div class="photo">
             <img src=profile.jpg" alt="Sandip Mandal">
         </div>
@@ -85,5 +84,29 @@
             <p>Phone: +91-7718162360</p>
         </footer>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all navigation links
+            var navLinks = document.querySelectorAll('nav a');
+
+            // Loop through each navigation link
+            navLinks.forEach(function(link) {
+                // Add click event listener to each link
+                link.addEventListener('click', function(event) {
+                    // Prevent default link behavior
+                    event.preventDefault();
+
+                    // Get the target section ID from the link's href attribute
+                    var targetId = this.getAttribute('href').substring(1);
+
+                    // Show the target section by adding 'active' class to it and removing 'active' class from others
+                    document.querySelectorAll('section').forEach(function(section) {
+                        section.classList.remove('active');
+                    });
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
