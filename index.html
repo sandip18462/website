@@ -46,6 +46,7 @@
             text-decoration: none;
             margin: 0 15px;
             font-size: 1.2em;
+            cursor: pointer;
         }
         nav a:hover {
             text-decoration: underline;
@@ -65,6 +66,10 @@
         section {
             margin-bottom: 20px;
             padding: 0 20px;
+            display: none;
+        }
+        section.active {
+            display: block;
         }
         section h2 {
             font-size: 1.8em;
@@ -77,6 +82,11 @@
         p {
             font-size: 1.2em;
             line-height: 1.6;
+        }
+        ul {
+            font-size: 1.2em;
+            line-height: 1.6;
+            padding-left: 20px;
         }
         footer {
             text-align: center;
@@ -93,10 +103,29 @@
             text-decoration: underline;
         }
     </style>
+    <script>
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('about').classList.add('active');
+            var navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    var targetId = this.getAttribute('href').substring(1);
+                    showSection(targetId);
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <nav>
-        <a href="#home">Home</a>
         <a href="#about">About Me</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
@@ -110,21 +139,38 @@
         <div class="photo">
             <img src="profile.jpg" alt="Sandip Mandal">
         </div>
-        <section id="about">
+        <section id="about" class="active">
             <h2>About Me</h2>
-            <p>I am a PhD student at the Indian Institute of Science (IISc) Bangalore, India. I have a keen interest in reading and continually expanding my knowledge base.</p>
+            <p>I am a PhD student at the Indian Institute of Science (IISc) Bangalore, India. I have a keen interest in reading and continually expanding my knowledge base. I am passionate about learning new technologies and applying them to solve real-world problems.</p>
+            <p>In my spare time, I enjoy reading, traveling, and exploring new cultures. I also like to engage in community service and volunteer for various social causes.</p>
         </section>
         <section id="research">
             <h2>Research</h2>
-            <p>Details about my research interests, projects, and achievements.</p>
+            <p>My research focuses on the following areas:</p>
+            <ul>
+                <li>Machine Learning and Artificial Intelligence</li>
+                <li>Data Mining and Big Data Analytics</li>
+                <li>Computer Vision and Image Processing</li>
+                <li>Natural Language Processing</li>
+            </ul>
+            <p>Here are some of the projects I have worked on:</p>
+            <ul>
+                <li><strong>Project A:</strong> Description of Project A.</li>
+                <li><strong>Project B:</strong> Description of Project B.</li>
+                <li><strong>Project C:</strong> Description of Project C.</li>
+            </ul>
         </section>
         <section id="publications">
             <h2>Publications</h2>
-            <p>A list of my research publications, papers, and articles.</p>
+            <ul>
+                <li><strong>Title of Paper 1:</strong> Journal/Conference, Year.</li>
+                <li><strong>Title of Paper 2:</strong> Journal/Conference, Year.</li>
+                <li><strong>Title of Paper 3:</strong> Journal/Conference, Year.</li>
+            </ul>
         </section>
         <section id="cv">
             <h2>CV</h2>
-            <p>Link to my detailed CV.</p>
+            <p>You can download my CV <a href="https://github.com/yourusername/yourrepository/raw/main/cv.pdf">here</a>.</p>
         </section>
         <footer id="contact">
             <p>Contact: <a href="mailto:sandipmandal@iisc.ac.in">sandipmandal@iisc.ac.in</a></p>
