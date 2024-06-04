@@ -5,47 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sandip Mandal - Personal Webpage</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Open Sans', Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            color: #333;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
         }
         header {
             text-align: center;
             margin-bottom: 20px;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
         }
         header h1 {
             margin: 0;
             font-size: 2.5em;
-            color: #333;
+        }
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .photo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .photo img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         section {
             margin-bottom: 20px;
+            padding: 0 20px;
         }
         section h2 {
-            font-size: 2em;
+            font-size: 1.8em;
             color: #666;
+            border-bottom: 2px solid #333;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
         }
         p {
             font-size: 1.2em;
-            color: #333;
             line-height: 1.6;
         }
         footer {
             text-align: center;
-            padding: 10px 0;
-            border-top: 1px solid #ccc;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 20px;
         }
         footer a {
-            color: #333;
+            color: #fff;
             text-decoration: none;
         }
         footer a:hover {
@@ -54,22 +95,40 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container" id="home">
         <header>
             <h1>Sandip Mandal</h1>
         </header>
-        <section>
+        <div class="photo">
+            <img src="your-photo-url.jpg" alt="Sandip Mandal">
+        </div>
+        <section id="about">
             <h2>About Me</h2>
             <p>I am a PhD student at the Indian Institute of Science (IISc) Bangalore, India. I have a keen interest in reading and continually expanding my knowledge base.</p>
         </section>
-        <section>
-            <h2>Interests</h2>
-            <p>Reading is my primary hobby, and I spend a significant amount of time exploring various topics through books and academic papers.</p>
+        <section id="research">
+            <h2>Research</h2>
+            <p>Details about my research interests, projects, and achievements.</p>
         </section>
-        <footer>
+        <section id="publications">
+            <h2>Publications</h2>
+            <p>A list of my research publications, papers, and articles.</p>
+        </section>
+        <section id="cv">
+            <h2>CV</h2>
+            <p>Link to my detailed CV.</p>
+        </section>
+        <footer id="contact">
             <p>Contact: <a href="mailto:sandipmandal@iisc.ac.in">sandipmandal@iisc.ac.in</a></p>
         </footer>
     </div>
 </body>
 </html>
-
