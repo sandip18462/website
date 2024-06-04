@@ -4,143 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sandip Mandal - Personal Webpage</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
-
-        body {
-            font-family: 'Open Sans', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            max-width: 1800px;
-            margin: 0 auto;
-            padding: 0px;
-            background-color: #fff;
-            box-shadow: 0 0 px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 5px;
-            padding: 5px 0;
-            background-color: #333;
-            color: #fff;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        nav {
-            background-color: #444;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2em;
-            cursor: pointer;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
+        /* Additional inline styles for specific adjustments */
         .photo {
             position: absolute;
             top: 20px;
             left: 20px;
         }
-        .photo img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 8px;  /* Added border radius */
-        }
-        section {
-            margin-bottom: 20px;
-            padding: 0 20px;
-            display: none;
-        }
-        section.active {
-            display: block;
-        }
-        section h2 {
-            font-size: 1.8em;
-            color: #666;
-            border-bottom: 2px solid #333;
-            display: inline-block;
-            padding-bottom: 5px;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-        ul {
-            font-size: 1.2em;
-            line-height: 1.6;
-            padding-left: 20px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: #fff;
-            margin-top: 20px;
-        }
-        footer a {
-            color: #fff;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .gallery img {
-            margin: 10px;
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        .red-link {
+            color: red;
+            font-weight: bold;
         }
     </style>
-    <script>
-        function showSection(sectionId) {
-            var sections = document.querySelectorAll('section');
-            sections.forEach(function(section) {
-                section.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('about').classList.add('active');
-            var navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(function(link) {
-                link.addEventListener('click', function() {
-                    var targetId = this.getAttribute('href').substring(1);
-                    showSection(targetId);
-                });
-            });
-        });
-    </script>
 </head>
 <body>
+    <div class="color-bar">
+        <h1>Multiscale MD simulation</h1>
+    </div>
     <nav>
         <a href="#about">About Me</a>
         <a href="#research">Research</a>
@@ -150,14 +31,16 @@
         <a href="#contact">Contact</a>
     </nav>
     <div class="container" id="home">
-        <header>
-            <h1>Multiscale MD Simulation</h1>
-        </header>
+        <!-- Photo positioned within the container -->
         <div class="photo">
-            <img src="profile.jpg" alt="Sandip Mandal">
+            <img src="https://github.com/yourusername/yourrepository/raw/main/profile.jpg" alt="Sandip Mandal">
         </div>
+        <header>
+            <h1>Sandip Mandal</h1>
+        </header>
         <section id="about" class="active">
-            <p>I am a PhD student at the Indian Institute of Science (IISc) Bangalore, India. I have a keen interest in reading and continually expanding my knowledge base. I am passionate about learning new technologies and applying them to solve real-world problems.</p>
+            <h2>About Me</h2>
+            <p>I am a <span class="red-link">PhD student</span> at the <span class="red-link">Indian Institute of Science (IISc) Bangalore, India</span>. I have a keen interest in reading and continually expanding my knowledge base. I am passionate about learning new technologies and applying them to solve real-world problems.</p>
             <p>In my spare time, I enjoy reading, traveling, and exploring new cultures. I also like to engage in community service and volunteer for various social causes.</p>
         </section>
         <section id="research">
