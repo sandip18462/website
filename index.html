@@ -22,6 +22,10 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             border-radius: 8px;
             overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         header {
             text-align: center;
@@ -57,7 +61,6 @@
             margin-bottom: 20px;
         }
         .photo img {
-            border-radius: 50%;
             width: 150px;
             height: 150px;
             object-fit: cover;
@@ -102,6 +105,18 @@
         footer a:hover {
             text-decoration: underline;
         }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            margin: 10px;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
     </style>
     <script>
         function showSection(sectionId) {
@@ -130,6 +145,7 @@
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#cv">CV</a>
+        <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
     </nav>
     <div class="container" id="home">
@@ -172,8 +188,19 @@
             <h2>CV</h2>
             <p>You can download my CV <a href="https://github.com/yourusername/yourrepository/raw/main/cv.pdf">here</a>.</p>
         </section>
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <img src="https://github.com/yourusername/yourrepository/raw/main/photo1.jpg" alt="Photo 1">
+                <img src="https://github.com/yourusername/yourrepository/raw/main/photo2.jpg" alt="Photo 2">
+                <img src="https://github.com/yourusername/yourrepository/raw/main/photo3.jpg" alt="Photo 3">
+                <img src="https://github.com/yourusername/yourrepository/raw/main/photo4.jpg" alt="Photo 4">
+            </div>
+        </section>
         <footer id="contact">
-            <p>Contact: <a href="mailto:sandipmandal@iisc.ac.in">sandipmandal@iisc.ac.in</a></p>
+            <p>Email: <a href="mailto:sandipmandal@iisc.ac.in">sandipmandal@iisc.ac.in</a></p>
+            <p>Email: <a href="mailto:sandipmandal.ph@gmail.com">secondemail@example.com</a></p>
+            <p>Phone: +91-7718162360</p>
         </footer>
     </div>
 </body>
