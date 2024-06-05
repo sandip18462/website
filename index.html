@@ -15,22 +15,23 @@
             overflow-x: hidden;
         }
         .container {
-            max-width: 1800px;  
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0px;
+            padding: 0;
             background-color: #fff;
             box-shadow: 0 0 5px rgba(0,0,0,0.1);
             border-radius: 8px;
             overflow: hidden;
-            min-height: 80vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            position: relative;
         }
         header {
             text-align: center;
-            margin-bottom: 0px;
-            padding: 0px 0;
+            margin-bottom: 0;
+            padding: 0;
             background-color: #333;
             color: #fff;
             display: none; /* Hide by default */
@@ -41,25 +42,7 @@
         header h1 {
             margin: 0;
             font-size: 2.5em;
-        }
-        .color-bar {
-            background-color: #ff7f0e;
-            color: #fff;
-            padding: 2px 0;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .photo {
-            position: absolute;
-            top: 30px;
-            left: 30px;
-        }
-        .photo img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 8px; 
+            padding: 20px 0;
         }
         nav {
             background-color: #444;
@@ -138,16 +121,30 @@
             justify-content: center;
             margin-top: 20px;
         }
-        .social-links img {
+        .social-links a {
             margin: 0 10px;
-            width: 50px;
-            height: 50px;
+        }
+        .social-links img {
+            width: 40px;
+            height: 40px;
         }
         .home .social-links {
             display: flex;
         }
         .container .social-links {
-            display: flex;
+            display: none;
+        }
+        .photo {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+        .photo img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px; 
         }
     </style>
     <script>
@@ -179,9 +176,8 @@
         <a href="#cv">CV</a>
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
-        
     </nav>
-    <div class="container">
+    <div class="container social-links">
         <header>
             <h1>Multiscale Simulation World</h1>
         </header>
@@ -225,9 +221,9 @@
         <section id="publications">
             <h2>Publications</h2>
             <ul>
-                <li><strong>Utilization of DNA and 2D metal oxide interaction for an optical biosensor:</strong> Journal: Physical Chemistry Chemical Physics (PCCP), I.F: 3.3 , Year: 2023, doi: https://doi.org/10.1039/D3CP01402A.</li>
-                <li><strong>DNA Tetrahedral Nanocages as a Promising Nanocarrier for Dopamine Delivery in Neurological Disorders:</strong> Journal: Nanoscale, I.F: 6.7 , Year: 2023.</li>
-                <li><strong>Drug-bacterial membrane interactions: A tale of two force fields:</strong> Journal: Physical Chemistry Chemical Physics (PCCP), I.F: 3.3 , Year: 2023.</li>
+                <li><strong>Utilization of DNA and 2D metal oxide interaction for an optical biosensor:</strong> Journal:Physical Chemistry Chemical Physics (PCCP), I.F: 3.3 , Year:2023, doi:https://doi.org/10.1039/D3CP01402A.</li>
+                <li><strong>DNA Tetrahedral Nanocages as a Promising Nanocarrier for Dopamine Delivery in Neurological Disorders:</strong> Journal: Nanoscale, I.F:6.7 , Year:2023.</li>
+                <li><strong>Drug-bacterial membrane interactions: A tale of two force fields:</strong> Journal:Physical Chemistry Chemical Physics (PCCP), I.F: 3.3 , Year:2023</li>
             </ul>
         </section>
         <section id="cv">
@@ -240,7 +236,7 @@
                 <img src="Diner_with_bill.jpg" alt="Photo 1">
                 <img src="CSF_MADDOCKS.jpg" alt="Photo 2">
                 <img src="ABC_2023.jpg" alt="Photo 3">
-                <img src="Siwtzerland_conf.jpg" alt="Photo 4">
+                <img src="Switzerland_conf.jpg" alt="Photo 4">
                 <img src="Labmates.JPG" alt="Photo 5">
             </div>
         </section>
