@@ -33,6 +33,10 @@
             padding: 0px 0;
             background-color: #333;
             color: #fff;
+            display: none; /* Hide by default */
+        }
+        .home header {
+            display: block; /* Show only on homepage */
         }
         header h1 {
             margin: 0;
@@ -76,7 +80,7 @@
         }
         section {
             margin-bottom: 20px;
-            padding: 0 20px;
+            padding: 20px;
             display: none;
         }
         section.active {
@@ -125,6 +129,26 @@
             object-fit: cover;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
+        .home {
+            background: url('wp.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .social-links img {
+            margin: 0 10px;
+            width: 50px;
+            height: 50px;
+        }
+        .home .social-links {
+            display: flex;
+        }
+        .container .social-links {
+            display: none;
+        }
     </style>
     <script>
         function showSection(sectionId) {
@@ -147,8 +171,8 @@
         });
     </script>
 </head>
-<body>
-   <nav>
+<body class="home">
+    <nav>
         <a href="#about">About</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
@@ -156,25 +180,27 @@
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
     </nav>
-    <div class="container" id="home">
+    <div class="container">
         <header>
             <h1>Multiscale Simulation World</h1>
         </header>
         <div class="photo">
             <img src="profile.jpg" alt="Sandip Mandal">
         </div>
-        <a href="https://scholar.google.com/citations?user=C3fn3SQAAAAJ" target="_blank">
-            <img src="google-scholar-logo.jpg" alt="Google Scholar" width="50" height="50">
-        </a>
-        <a href="https://www.researchgate.net/profile/Sandip-Mandal-5" target="_blank">
-            <img src="researchgate-icon-01.jpg" alt="ResearchGate" width="50" height="50">
-        </a>
-        <a href="https://twitter.com/YOUR_TWITTER_USERNAME" target="_blank">
-            <img src="Twiter.jpg" alt="Twitter" width="50" height="50">
-        </a>
-        <a href="https://www.linkedin.com/in/sandip-mandal-5b2a2114a/?originalSubdomain=in" target="_blank">
-            <img src="linkedin-logo.jpg" alt="LinkedIn" width="50" height="50">
-        </a>
+        <div class="social-links">
+            <a href="https://scholar.google.com/citations?user=C3fn3SQAAAAJ" target="_blank">
+                <img src="google-scholar-logo.jpg" alt="Google Scholar">
+            </a>
+            <a href="https://www.researchgate.net/profile/Sandip-Mandal-5" target="_blank">
+                <img src="researchgate-icon-01.jpg" alt="ResearchGate">
+            </a>
+            <a href="https://twitter.com/YOUR_TWITTER_USERNAME" target="_blank">
+                <img src="Twitter.jpg" alt="Twitter">
+            </a>
+            <a href="https://www.linkedin.com/in/sandip-mandal-5b2a2114a/?originalSubdomain=in" target="_blank">
+                <img src="linkedin-logo.jpg" alt="LinkedIn">
+            </a>
+        </div>
         <section id="about" class="active">
             <p>I am a <span class="red-link">PhD student</span> at the <span class="red-link">Indian Institute of Science (IISc) Bangalore, India</span>. I have a keen interest in reading and continually expanding my knowledge base. I am passionate about learning new technologies and applying them to solve real-world problems.</p>
             <p>In my spare time, I enjoy reading, traveling, and exploring new cultures. I also like to engage in community service and volunteer for various social causes.</p>
@@ -198,9 +224,9 @@
         <section id="publications">
             <h2>Publications</h2>
             <ul>
-                <li><strong>Utilization of DNA and 2D metal oxide interaction for an optical biosensor:</strong> Journal:Physical Chemistry Chemical Physics (PCCP), I.F: 3.3 , Year:2023, doi:https://doi.org/10.1039/D3CP01402A.</li>
-                <li><strong>DNA Tetrahedral Nanocages as a Promising Nanocarrier for Dopamine Delivery in Neurological Disorders:</strong> Journal: Nanoscale, I.F:6.7 , Year:2023.</li>
-                <li><strong>Drug-bacterial membrane interactions: A tale of two force fields:</strong> Journal:Physical Chemistry Chemical Physics (PCCP), I.F: 3.3 , Year:2023</li>
+                <li><strong>Utilization of DNA and 2D metal oxide interaction for an optical biosensor:</strong> Journal: Physical Chemistry Chemical Physics (PCCP), I.F: 3.3 , Year: 2023, doi: https://doi.org/10.1039/D3CP01402A.</li>
+                <li><strong>DNA Tetrahedral Nanocages as a Promising Nanocarrier for Dopamine Delivery in Neurological Disorders:</strong> Journal: Nanoscale, I.F: 6.7 , Year: 2023.</li>
+                <li><strong>Drug-bacterial membrane interactions: A tale of two force fields:</strong> Journal: Physical Chemistry Chemical Physics (PCCP), I.F: 3.3 , Year: 2023.</li>
             </ul>
         </section>
         <section id="cv">
@@ -213,14 +239,17 @@
                 <img src="Diner_with_bill.jpg" alt="Photo 1">
                 <img src="CSF_MADDOCKS.jpg" alt="Photo 2">
                 <img src="ABC_2023.jpg" alt="Photo 3">
-                <img src="Siwtzerland_conf.jpg" alt="Photo 4">
+                <img src="Switzerland_conf.jpg" alt="Photo 4">
                 <img src="Labmates.JPG" alt="Photo 5">
-
             </div>
         </section>
-        <footer id="contact">
+        <section id="contact">
+            <h2>Contact</h2>
             <p>Email: <a href="mailto:sandipmandal@iisc.ac.in">sandipmandal@iisc.ac.in</a>, <a href="mailto:sandipmandal.ph@gmail.com">sandipmandal.ph@gmail.com</a></p>
             <p>Phone: +91-7718162360</p>
+        </section>
+        <footer>
+            <p>&copy; 2024 Sandip Mandal</p>
         </footer>
     </div>
 </body>
