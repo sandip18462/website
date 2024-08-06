@@ -6,13 +6,15 @@
     <title>Sandip Mandal - Personal Webpage</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
-        body {
+        body, html {
             font-family: 'Open Sans', Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
             overflow-x: hidden;
+            width: 100%;
+            height: 100%;
         }
         .container {
             max-width: 1200px;
@@ -24,11 +26,12 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
         header {
             text-align: center;
-            margin-bottom: 20px;
-            padding: 20px 0;
+            margin-bottom: 0px;
+            padding: 0px 0;
             background-color: #333;
             color: #fff;
         }
@@ -36,15 +39,24 @@
             margin: 0;
             font-size: 2.5em;
         }
-        .new-publication-alert {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #ff0000;
+        .color-bar {
+            background-color: #ff7f0e;
             color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            text-decoration: none;
+            padding: 2px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .photo {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+        .photo img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px; 
         }
         nav {
             background-color: #444;
@@ -67,6 +79,8 @@
             margin-bottom: 20px;
             padding: 0 20px;
             display: none;
+            min-height: calc(100vh - 60px); /* Ensures sections take up at least the height of the viewport minus nav and footer */
+            box-sizing: border-box;
         }
         section.active {
             display: block;
@@ -93,7 +107,7 @@
             padding: 20px;
             background-color: #333;
             color: #fff;
-            margin-top: auto;
+            margin-top: 20px;
         }
         footer a {
             color: #fff;
@@ -114,33 +128,27 @@
             object-fit: cover;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        .blue-name {
-            color: blue;
-            font-weight: bold;
-        }
-        .figures {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        .figures img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            margin: 10px;
-        }
         .social-media {
             display: flex;
             justify-content: center;
-            margin: 20px 0;
+            margin-top: 20px;
         }
         .social-media a {
             margin: 0 10px;
         }
         .social-media img {
-            width: 50px;
-            height: 50px;
+            width: 30px;
+            height: 30px;
+        }
+        .new-publication-alert {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
         }
     </style>
     <script>
@@ -156,7 +164,8 @@
             document.getElementById('about').classList.add('active');
             var navLinks = document.querySelectorAll('nav a');
             navLinks.forEach(function(link) {
-                link.addEventListener('click', function() {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
                     var targetId = this.getAttribute('href').substring(1);
                     showSection(targetId);
                 });
