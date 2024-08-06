@@ -15,7 +15,7 @@
             overflow-x: hidden;
         }
         .container {
-            max-width: 1500px;  
+            max-width: 1500px;
             margin: 0 auto;
             padding: 0px;
             background-color: #fff;
@@ -37,6 +37,16 @@
         header h1 {
             margin: 0;
             font-size: 2.5em;
+        }
+        .new-publication-alert {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff0000;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
         }
         nav {
             background-color: #444;
@@ -110,24 +120,17 @@
             color: blue;
             font-weight: bold;
         }
-        .moving-graphic {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 300px;
-            height: 300px;
-            background-color: #ff7f0e;
-            border-radius: 50%;
-            animation: move 5s infinite alternate;
+        .figures {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
         }
-        @keyframes move {
-            0% {
-                transform: translateX(-50%) translateY(0);
-            }
-            100% {
-                transform: translateX(-50%) translateY(100px);
-            }
+        .figures img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin: 10px;
         }
     </style>
     <script>
@@ -152,7 +155,7 @@
     </script>
 </head>
 <body>
-   <nav>
+    <nav>
         <a href="#about">About</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
@@ -160,6 +163,7 @@
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
     </nav>
+    <a href="https://doi.org/10.1039/D3CP01402A" target="_blank" class="new-publication-alert">New Publication Alert!</a>
     <div class="container" id="home">
         <header>
             <h1>Multiscale Simulation World</h1>
@@ -167,7 +171,6 @@
         <div class="photo">
             <img src="profile.jpg" alt="Sandip Mandal">
         </div>
-        <div class="moving-graphic"></div>
         <p class="blue-name">Sandip Mandal</p>
         <a href="https://scholar.google.com/citations?user=C3fn3SQAAAAJ" target="_blank">
             <img src="google-scholar-logo.jpg" alt="Google Scholar" width="50" height="50">
@@ -182,8 +185,13 @@
             <img src="linkedin-logo.jpg" alt="LinkedIn" width="50" height="50">
         </a>
         <section id="about" class="active">
-            <p>I am a <span class="red-link">PhD student</span> at the <span class="red-link">Center for Condensed Matter Theory,Department of Physics,Indian Institute of Science (IISc) Bangalore, India</span>. I am working with Prof. Prabal K. Maiti on the Multiscale modeling of biomolecules like DNA, PNA, Peptide self-assembly using Coarse-Grained modeling and DNA nanotechnology.</p>
+            <p>I am a <span class="red-link">PhD student</span> at the <span class="red-link">Center for Condensed Matter Theory, Department of Physics, Indian Institute of Science (IISc) Bangalore, India</span>. I am working with Prof. Prabal K. Maiti on the Multiscale modeling of biomolecules like DNA, PNA, Peptide self-assembly using Coarse-Grained modeling and DNA nanotechnology.</p>
             <p>I have a keen interest in reading and continually expanding my knowledge base. I am passionate about learning new technologies and applying them to solve real-world problems. In my spare time, I enjoy reading, traveling, and exploring new cultures. I also like to engage in community service and volunteer for various social causes.</p>
+            <div class="figures">
+                <img src="ABC_2023.jpg" alt="Figure 1">
+                <img src="Diner_with_bill.jpg" alt="Figure 2">
+                <img src="ABC_2023.jpg" alt="Figure 3">
+            </div>
         </section>
         <section id="research">
             <h2>Research</h2>
@@ -205,29 +213,34 @@
         <section id="publications">
             <h2>Publications</h2>
             <ul>
-                <li><strong>Utilization of DNA and 2D metal oxide interaction for an optical biosensor:</strong> Journal: Physical Chemistry Chemical Physics (PCCP), I.F: 3.3, Year: 2023, <a href="https://doi.org/10.1039/D3CP01402A" target="_blank">doi:10.1039/D3CP01402A</a>.</li>
-                <li><strong>DNA Tetrahedral Nanocages as a Promising Nanocarrier for Dopamine Delivery in Neurological Disorders:</strong> Journal: Nanoscale, I.F: 7.8, Year: 2022, <a href="https://doi.org/10.1039/C9NR05987G" target="_blank">doi:10.1039/C9NR05987G</a>.</li>
+                <li><strong>Utilization of DNA and 2D metal oxide interaction for an optical biosensor:</strong> Journal: Physical Chemistry Chemical Physics, I.F: 4.8, Year: 2023, <a href="https://doi.org/10.1039/D3CP01402A" target="_blank">doi:10.1039/D3CP01402A</a>.</li>
+                <li><strong>DNA Tetrahedral Nanocages as a Promising Nanocarrier for Dopamine Delivery:</strong> Journal: Nanoscale, I.F: 7.8, Year: 2022, <a href="https://doi.org/10.1039/C9NR05987G" target="_blank">doi:10.1039/C9NR05987G</a>.</li>
                 <li><strong>Drug-bacterial membrane interactions: A tale of two force fields:</strong> Journal: Journal of Chemical Theory and Computation, I.F: 6.2, Year: 2021, <a href="https://doi.org/10.1021/acs.jctc.1c00287" target="_blank">doi:10.1021/acs.jctc.1c00287</a>.</li>
                 <li><strong>Temperature Induced Melting pathways of DNA triplex vs. PNA triplexes:</strong> Journal: The Journal of Physical Chemistry B, I.F: 3.2, Year: 2020, <a href="https://doi.org/10.1021/acs.jpcb.0c01898" target="_blank">doi:10.1021/acs.jpcb.0c01898</a>.</li>
             </ul>
+        </section>
         <section id="cv">
-            <h2>CV</h2>
-            <p>You can download my CV <a href="https://github.com/yourusername/yourrepository/raw/main/cv.pdf">here</a>.</p>
+            <h2>Curriculum Vitae</h2>
+            <p>You can download my CV <a href="cv.pdf" target="_blank">here</a>.</p>
         </section>
         <section id="gallery">
             <h2>Gallery</h2>
             <div class="gallery">
-                <img src="Diner_with_bill.jpg" alt="Photo 1">
-                <img src="CSF_MADDOCKS.jpg" alt="Photo 2">
-                <img src="ABC_2023.jpg" alt="Photo 3">
-                <img src="Siwtzerland_conf.jpg" alt="Photo 4">
-                <img src="Labmates.JPG" alt="Photo 5">
-
+                <img src="ABC_2023.jpg" alt="Image 1">
+                <img src="Diner_with_bill.jpg" alt="Image 2">
+                <img src="Labmates.JPG" alt="Image 3">
+                <img src="Siwtzerland_conf.jpg" alt="Image 4">
+                <img src="CSF_MADDOCKS.jpg" alt="Image 5">
+                <img src="image6.jpg" alt="Image 6">
             </div>
         </section>
-        <footer id="contact">
-             <p>&copy; 2024 Sandip Mandal. All rights reserved. | <a href="mailto:sandipmandal.ph@gmail.com">sandipmandal.ph@gmail.com</a></p>
-        </footer>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>If you have any questions, feel free to reach out to me at <a href="mailto:sandipmandal@example.com">sandipmandal@example.com</a>.</p>
+        </section>
     </div>
+    <footer>
+        <p>&copy; 2024 Sandip Mandal. All rights reserved. | <a href="mailto:sandipmandal@example.com">Contact</a></p>
+    </footer>
 </body>
 </html>
